@@ -7,6 +7,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.main{
+    display: flex;
+}
+
 .game-container {
     display: grid;
     grid-template-columns: repeat(4, 100px);
