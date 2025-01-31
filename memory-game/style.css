@@ -5,8 +5,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #5e7081;
+    background-color: #070b15;
     font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #level{
@@ -59,6 +62,6 @@ body {
 }
 
 .hidden {
-    background-color: #3498db;
+    background-color: #fffbe5;
     color: transparent;
 }
