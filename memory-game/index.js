@@ -84,7 +84,8 @@ document.getElementById("popup-btn").addEventListener("click", () => {
 document.getElementById("popup").addEventListener("click", (e) => {
     if (e.target === document.getElementById("popup")) {
         document.getElementById("popup").style.display = "none";
-        currentLevel++;
-        startLevel(currentLevel);
+        currentLevel++;  
     }
 });
+
+startLevel(currentLevel);
