@@ -1,7 +1,9 @@
-// ... existing code ...
-let currentLevel = 1;
-let matchTime = 1000; // Starting time to view cards in milliseconds
 
+let currentLevel = 1;
+let matchTime = 1000;
+
+
+// Generate the Emoji for each levels
 function generateEmojis(level) {
     const baseEmojis = ['🍎', '🍌', '🍇', '🍓', '🍉', '🍊', '🍋', '🍒', '🥝', '🍍', '🥭', '🍐', '🍑', '🍈', '🍏', '🥥'];
     const pairsForLevel = Math.min(2 + level, baseEmojis.length); // Start with 2 pairs, add 1 pair per level
@@ -10,10 +12,12 @@ function generateEmojis(level) {
     return pairs.sort(() => 0.5 - Math.random());
 }
 
+
+// Starting the level 
 function startLevel(level) {
     matchedPairs = 0;
     flippedCards = [];
-    gameBoard.innerHTML = ''; // Clear the board
+    gameBoard.innerHTML = '';
 
     // Remove existing level display if it exist
     const existingLevelDisplay = document.querySelector('level');
@@ -24,7 +28,7 @@ function startLevel(level) {
     
     const levelEmojis = generateEmojis(level);
     
-    // Add level display
+    // Add level display e.g level 1, level 2, level 3 e.t.c
     const levelDisplay = document.createElement('level');
     levelDisplay.innerHTML = `Level ${level}`;
     levelDisplay.style.textAlign = 'center';
@@ -32,7 +36,9 @@ function startLevel(level) {
     levelDisplay.style.color = "red"
     levelDisplay.style.fontSize = '24px';
     document.body.insertBefore(levelDisplay, gameBoard);
-    
+
+
+    // shuffle emojis foe each level
     levelEmojis.forEach((emoji, index) => {
         const card = document.createElement('div');
         card.classList.add('card', 'hidden');
@@ -41,6 +47,7 @@ function startLevel(level) {
         card.innerText = emoji;
         gameBoard.appendChild(card);
 
+        // Flipping the card, checking if the card id match
         card.addEventListener('click', () => {
             if (flippedCards.length < 2 && !card.classList.contains('matched') && !card.classList.contains('revealed')) {
                 card.classList.remove('hidden');
@@ -54,6 +61,7 @@ function startLevel(level) {
     });
 }
 
+// This is checking the class and storing it 
 function checkMatch() {
     if (flippedCards[0].dataset.emoji === flippedCards[1].dataset.emoji) {
         flippedCards.forEach(card => card.classList.add('matched'));

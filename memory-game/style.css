@@ -48,6 +48,13 @@ body {
     grid-template-columns: repeat(4, 100px);
     grid-gap: 10px;
 }
+.name{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    color: red;
+    bottom: 0;
+}
 
 .card {
     width: 100px;
