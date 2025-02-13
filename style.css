@@ -7,16 +7,15 @@ body {
     height: 100vh;
     background-color: #070b15;
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
+    background-image: url('back.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
 }
 
 #level{
     color: green;
     background-color: red;
 }
-
 .popup {
     display: none;
     position: fixed;
@@ -50,9 +49,11 @@ body {
 }
 .name{
     display: flex;
-    gap: 10px;
+    /* gap: 7px; */
     position: absolute;
-    color: red;
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
     bottom: 0;
 }
 

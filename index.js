@@ -29,13 +29,13 @@ function startLevel(level) {
     const levelEmojis = generateEmojis(level);
     
     // Add level display e.g level 1, level 2, level 3 e.t.c
-    const levelDisplay = document.createElement('level');
+    const levelDisplay = document.createElement('level');   
     levelDisplay.innerHTML = `Level ${level}`;
     levelDisplay.style.textAlign = 'center';
-    // levelDisplay.style.marginBottom = '20px';
     levelDisplay.style.color = "red"
-    levelDisplay.style.fontSize = '24px';
+    levelDisplay.style.fontSize = '29px';
     document.body.insertBefore(levelDisplay, gameBoard);
+    
 
 
     // shuffle emojis foe each level
